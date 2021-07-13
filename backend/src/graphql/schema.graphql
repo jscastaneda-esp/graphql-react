@@ -1,0 +1,25 @@
+scalar Date
+
+type Message {
+  _id: ID!
+  title: String!
+  content: String!
+  author: String!
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+input MessageInput {
+  title: String!
+  content: String!
+  author: String!
+}
+
+type Query {
+  ping: String!
+  messages: [Message!]
+}
+
+type Mutation {
+  createMessage(input: MessageInput!): Message
+}
